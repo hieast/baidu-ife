@@ -1,0 +1,60 @@
+* {
+    margin: 0px;
+    padding: 20px;
+}
+
+html {
+    background-color: white;
+}
+
+img {
+    padding: 0px;
+}
+
+body {
+    position: relative;
+    min-width: 1024px;
+    background-color: #eee;
+}
+
+ 
+body::after {
+    content: "";
+    clear: both;
+    display: block;
+    visibility: hidden;
+    height: 0;
+    border: 1px solid black;
+}   
+
+.team {
+    width: 200px;
+    float: left;
+    background-color: white;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.team > img {
+    float: left;
+}
+
+.team > span {
+    vertical-align: top;
+}
+
+.article {
+    margin-left: 240px;
+    margin-right: 160px;
+    background-color: white;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.logo {
+    width: 120px;
+    float: right;
+    background-color: white;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
