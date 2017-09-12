@@ -1,6 +1,11 @@
 * {
     margin: 0px;
     padding: 20px;
+    border: 2px dashed #999;
+    /* -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box; */
+
 }
 
 html {
@@ -8,53 +13,46 @@ html {
 }
 
 img {
-    padding: 0px;
+    width: 80px;
+    height: 80px;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     position: relative;
-    min-width: 1024px;
+    min-width: 640px;
     background-color: #eee;
 }
 
- 
-body::after {
-    content: "";
-    clear: both;
-    display: block;
-    visibility: hidden;
-    height: 0;
-    border: 1px solid black;
-}   
 
 .team {
     width: 200px;
-    float: left;
-    background-color: white;
-    border: 1px solid black;
+    left: 20px;
     box-sizing: border-box;
+    position: absolute;
+    background-color: white;
 }
 
 .team > img {
     float: left;
 }
 
-.team > span {
-    vertical-align: top;
+.team > div {
+    margin-left: 80px;
+    padding: 0px;
 }
 
 .article {
-    margin-left: 240px;
-    margin-right: 160px;
+    margin-left: 220px;
+    margin-right: 140px;
     background-color: white;
-    border: 1px solid black;
-    box-sizing: border-box;
 }
 
 .logo {
     width: 120px;
-    float: right;
-    background-color: white;
-    border: 1px solid black;
     box-sizing: border-box;
+    position: absolute;
+    right: 20px;
+    background-color: white;
 }
