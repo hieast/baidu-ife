@@ -1,0 +1,87 @@
+/* position其实比float要更接近“布局”属性。但是position的问题是，
+所谓布局是设定各区域（元素）的关联和约束，而定位只是设定单一元素的位置大小。
+要实现一个布局，要对多个定位元素中手动设定相关的参数
+（如左栏width:200px，右栏left:200px），相当于人为的把大小和位置参数计算出来。
+这违背了DRY原则，也无法真正实现关联约束。（如左栏设了max/min-width之后，
+最终实际width未必是200px，此时右栏怎么设left值？又如一个水平固定width、
+垂直自适应height的绝对定位元素，我们如何从它的底部继续排下一个元素？）
+除非我们引入JavaScript脚本来进行计算。因此运用position布局的限制条件相当多，
+通常只适合那些相对孤立的部件（如页头页脚）或较为简单且各区域大小位置固定的布局。
+至于说以JavaScript实现的布局管理器，是将position作为实现布局的底层技术，
+已经算不得CSS了（因为你也不写CSS）。 */
+
+
+
+* {
+    margin: 0px;
+    padding: 20px;
+    border: 2px dashed #999;
+    /* -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box; */
+
+}
+
+html {
+    padding: 0px;
+    border: 0px;
+    background-color: white;
+}
+body {
+    padding: 0px; 
+    border: 0px;   
+}
+
+img {
+    width: 80px;
+    height: 80px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 20px;
+    position: relative;
+    min-width: 640px;
+    background-color: #eee;
+    overflow: hidden;
+    height: 100%;
+}
+
+
+.team {
+    width: 200px;
+    left: 20px;
+    box-sizing: border-box;
+    position: absolute;
+    background-color: white;
+}
+
+.team > img {
+    float: left;
+}
+
+.team > div {
+    margin-left: 80px;
+    padding: 0px;
+}
+
+.article {
+    margin-left: 220px;
+    margin-right: 140px;
+    background-color: white;
+}
+
+.logo {
+    margin-bottom: 20px;
+    width: 120px;
+    height: 2000px;
+    box-sizing: border-box;
+    position: absolute;
+    right: 20px;
+    background-color: white;
+}
+
+.logo > img {
+    margin-top: 20px;
+}
